@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "C:\Users\adith\Documents\VIT-Galaxyzoo\train\supervised.py", line 77, in <module>
+    logits = model(images)
+             ^^^^^^^^^^^^^
+  File "C:\Users\adith\.anaconda\envs\basePython\Lib\site-packages\torch\nn\modules\module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\.anaconda\envs\basePython\Lib\site-packages\torch\nn\modules\module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\Documents\VIT-Galaxyzoo\train\supervised.py", line 59, in forward
+    return self.head(self.encoder(x))  # encoder returns CLS token (B, embed_dim)
+                     ^^^^^^^^^^^^^^^
+  File "C:\Users\adith\.anaconda\envs\basePython\Lib\site-packages\torch\nn\modules\module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\.anaconda\envs\basePython\Lib\site-packages\torch\nn\modules\module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\Documents\VIT-Galaxyzoo\train\..\models\vit.py", line 54, in forward
+    x = block(x)
+        ^^^^^^^^
+  File "C:\Users\adith\.anaconda\envs\basePython\Lib\site-packages\torch\nn\modules\module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\.anaconda\envs\basePython\Lib\site-packages\torch\nn\modules\module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\Documents\VIT-Galaxyzoo\train\..\models\vit.py", line 30, in forward
+    x_attn, _ = self.attn(x_prenorm, x_prenorm, x_prenorm)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\.anaconda\envs\basePython\Lib\site-packages\torch\nn\modules\module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\.anaconda\envs\basePython\Lib\site-packages\torch\nn\modules\module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\.anaconda\envs\basePython\Lib\site-packages\torch\nn\modules\activation.py", line 1495, in forward
+    attn_output, attn_output_weights = F.multi_head_attention_forward(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adith\.anaconda\envs\basePython\Lib\site-packages\torch\nn\functional.py", line 7074, in multi_head_attention_forward
+    attn_output = linear(attn_output, out_proj_weight, out_proj_bias)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

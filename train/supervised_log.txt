@@ -1,0 +1,13 @@
+Using device: cpu
+Train: 12315 | Test: 49263
+Model parameters: 2,825,091
+Epoch: 1 | Loss: 1.5190 | Batch: 0
+Epoch: 1 | Loss: 0.6550 | Batch: 30
+Epoch: 1 | Loss: 0.6967 | Batch: 60
+Epoch: 1 | Loss: 0.6776 | Batch: 90
+Epoch: 1 | Loss: 0.6737 | Batch: 120
+Epoch: 1 | Loss: 0.6840 | Batch: 150
+Epoch: 1 | Loss: 0.6326 | Batch: 180
+Epoch 1/30 | Avg Loss: 0.6770
+Epoch: 2 | Loss: 0.5760 | Batch: 0
+Epoch: 2 | Loss: 0.5548 | Batch: 30
