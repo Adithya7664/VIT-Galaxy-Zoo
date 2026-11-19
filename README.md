@@ -8,13 +8,13 @@ A Vision Transformer (ViT) trained from scratch using Masked Autoencoders (MAE) 
 
 ## Results
 
-| Method | Labels Used | Accuracy |
-|--------|------------|----------|
-| SSL (MAE pretrain) + Linear Probe | 100% | **81.00%** |
-| SSL (MAE pretrain) + kNN | 100% | 78.73% |
-| Supervised ViT from scratch | 20% | 79.06% |
+| Method | Pretraining Labels | Probe/Head Labels | Accuracy |
+|--------|-------------------|-------------------|----------|
+| SSL (MAE pretrain) + Linear Probe | 0% | 80% | **81.00%** |
+| SSL (MAE pretrain) + kNN | 0% | 80% | 78.73% |
+| Supervised ViT from scratch | — | 20% | 79.06% |
 
-**Key finding:** MAE-pretrained encoder with a frozen linear layer matches a fully supervised ViT trained on 5× more labeled data — demonstrating the value of self-supervised pretraining in low-label regimes.
+**Key finding:** MAE encoder trained with zero labels — when given a linear head on 80% of labels — outperforms a fully supervised ViT trained end-to-end on only 20% of labels. The kNN result (78.73%) is especially notable: it nearly matches supervised performance using no gradient updates at all, just nearest-neighbor lookup in embedding space.
 
 ---
 
