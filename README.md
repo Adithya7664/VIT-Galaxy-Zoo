@@ -10,11 +10,14 @@ A Vision Transformer (ViT) trained from scratch using Masked Autoencoders (MAE) 
 
 | Method | Pretraining Labels | Probe/Head Labels | Accuracy |
 |--------|-------------------|-------------------|----------|
-| SSL (MAE pretrain) + Linear Probe | 0% | 80% | **81.00%** |
-| SSL (MAE pretrain) + kNN | 0% | 80% | 78.73% |
+| Majority-class baseline | — | — | 56.55% |
 | Supervised ViT from scratch | — | 20% | 79.06% |
+| SSL (MAE pretrain) + kNN (k=20) | 0% | 20% | 78.22% |
+| SSL (MAE pretrain) + Linear Probe | 0% | 20% | **80.34%** |
+| SSL (MAE pretrain) + kNN | 0% | 80% | 78.73% |
+| SSL (MAE pretrain) + Linear Probe | 0% | 80% | 81.00% |
 
-**Key finding:** MAE encoder trained with zero labels — when given a linear head on 80% of labels — outperforms a fully supervised ViT trained end-to-end on only 20% of labels. The kNN result (78.73%) is especially notable: it nearly matches supervised performance using no gradient updates at all, just nearest-neighbor lookup in embedding space.
+**Key finding:** With the same number of labels, a frozen MAE encoder plus a linear head reaches 80.34% vs 79.06% for a supervised ViT trained end-to-end, and the encoder saw zero labels during pretraining. Giving the probe 80% of labels raises accuracy only to 81.00%, so most of the performance comes from the pretrained features. Single seed; the 1.3-point margin is small, so read it as "matches or slightly beats" the supervised baseline.
 
 ---
 

@@ -86,7 +86,7 @@ print(f"Class distribution: {np.bincount(labels_arr)}")
 
 # ── train/test split ──────────────────────────────────────────────────────────
 X_train, X_test, y_train, y_test = train_test_split(
-    embeddings, labels_arr, test_size=0.2, random_state=42, stratify=labels_arr
+    embeddings, labels_arr, test_size=0.8, random_state=42, stratify=labels_arr
 )
 
 # ── linear probe ─────────────────────────────────────────────────────────────
