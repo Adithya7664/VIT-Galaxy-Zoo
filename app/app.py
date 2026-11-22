@@ -20,8 +20,9 @@ from configs.config import (
     DECODER_DIM, DECODER_DEPTH
 )
 
-CHECKPOINT     = "C:/Users/adith/Downloads/mae_epoch70.pth"
-PRECOMP_EMBEDS = "C:/Users/adith/Documents/VIT-Galaxyzoo/eval/outputs/embeddings.npz"
+BASE_DIR       = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CHECKPOINT     = os.path.join(BASE_DIR, "checkpoints", "mae_epoch70.pth")
+PRECOMP_EMBEDS = os.path.join(BASE_DIR, "eval", "outputs", "embeddings.npz")
 device = torch.device('cpu')
 
 # ── load model (cached so it only loads once) ─────────────────────────────────
